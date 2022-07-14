@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title> Bank Marketing Campaign </title>
+        <!--<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>-->
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+	</head>
+	<body>
+        <div class = "login">
+            <h1> Predict Subscription in Term Deposit </h1>
+            <form action = "{{ url_for('predict') }}" method = "POST" >
+                <input type = "text" name = "duration" placeholder = "Duration" required = "required" />
+                <input type = "text" name = "euribor3m" placeholder = "euribor 3 month rate" required = "required" />
+                <input type = "text" name = "age" placeholder = "Age" required = "required" />
+                <input type = "text" name = "job" placeholder = "Job" required = "required" />
+                <input type = "text" name = "campaign" placeholder = "Campaign" required = "required" />
+                <input type = "text" name = "pdays" placeholder = "Previous days" required = "required" />
+                <input type = "text" name = "education" placeholder = "Education" required = "required" />
+                <input type = "text" name = "day_of_week" placeholder = "Day of week" required = "required" />
+                <input type = "text" name = "nr.employed" placeholder = "Number of employees" required = "required" />
+                <input type = "text" name = "poutcome" placeholder = "Previous outcome" required = "required" />
+                <button type = "submit" class = "btn btn-primary btn-block btn-large"> Predict </button>
+            </form>
+            <br>
+            {{prediction_text}}
+        </div>
+	</body>
+</html>
